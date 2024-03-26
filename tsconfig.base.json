@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gatto/gatto-angular": ["libraries/gatto-angular/src/index.ts"]
+      "@gatto/gatto-angular": ["libraries/gatto-angular/src/index.ts"],
+      "@gatto/gatto-react": ["libraries/gatto-react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
