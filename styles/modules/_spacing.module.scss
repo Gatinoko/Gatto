@@ -1,0 +1,40 @@
+$_SPACING-VALUES: (
+  default: (
+    space-3xl: clamp(6rem, 5.487rem + 2.5974vi, 7.5rem),
+    space-2xl: clamp(4rem, 3.658rem + 1.7316vi, 5rem),
+    space-xl: clamp(3rem, 2.7435rem + 1.2987vi, 3.75rem),
+    space-l: clamp(2rem, 1.829rem + 0.8658vi, 2.5rem),
+    space-m: clamp(1.5rem, 1.3718rem + 0.6494vi, 1.875rem),
+    space-s: clamp(1rem, 0.9145rem + 0.4329vi, 1.25rem),
+    space-xs: clamp(0.75rem, 0.6859rem + 0.3247vi, 0.9375rem),
+    space-2xs: clamp(0.5rem, 0.4573rem + 0.2165vi, 0.625rem),
+    space-3xs: clamp(0.25rem, 0.2286rem + 0.1082vi, 0.3125rem),
+  ),
+  one-up: (
+    space-2xl-3xl: clamp(4rem, 2.803rem + 6.0606vi, 7.5rem),
+    space-xl-2xl: clamp(3rem, 2.316rem + 3.4632vi, 5rem),
+    space-l-xl: clamp(2rem, 1.4015rem + 3.0303vi, 3.75rem),
+    space-m-l: clamp(1.5rem, 1.158rem + 1.7316vi, 2.5rem),
+    space-s-m: clamp(1rem, 0.7008rem + 1.5152vi, 1.875rem),
+    space-xs-s: clamp(0.75rem, 0.579rem + 0.8658vi, 1.25rem),
+    space-2xs-xs: clamp(0.5rem, 0.3504rem + 0.7576vi, 0.9375rem),
+    space-3xs-2xs: clamp(0.25rem, 0.1218rem + 0.6494vi, 0.625rem),
+  ),
+  custom: (
+    space-s-l: clamp(1rem, 0.487rem + 2.5974vi, 2.5rem),
+  ),
+);
+
+@function spacing($key) {
+  @if map-has-key($_SPACING-VALUES, default, $key) {
+    @return map-get($_SPACING-VALUES, default, $key);
+  }
+  @if map-has-key($_SPACING-VALUES, one-up, $key) {
+    @return map-get($_SPACING-VALUES, one-up, $key);
+  }
+  @if map-has-key($_SPACING-VALUES, custom, $key) {
+    @return map-get($_SPACING-VALUES, custom, $key);
+  } @else {
+    @error 'Unknown constant `#{$key}`';
+  }
+}
