@@ -1,1 +1,1 @@
-export * from './lib/gatto-react';
+export * from './lib/components';
