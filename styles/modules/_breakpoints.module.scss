@@ -1,0 +1,41 @@
+// @link https://utopia.fyi/grid/calculator/?c=232,16,1.25,1240,20,1.25,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+$_SCREEN-BREAKPOINTS: (
+  widescreen: (
+    max: 1920px,
+    min: 1240px,
+  ),
+  desktop: (
+    max: 1240px,
+    min: 641px,
+  ),
+  tablet: (
+    max: 640px,
+    min: 441px,
+  ),
+  mobile: (
+    max: 440px,
+    min: 232px,
+  ),
+);
+
+// Mixin utility to make assigning styles to specific breakpoints easier
+@mixin setBreakpointStyles($breakpoints...) {
+  @each $breakpoint in $breakpoints {
+    @media only screen and (min-width: map-get($_SCREEN-BREAKPOINTS, $breakpoint, 'min')) and (max-width: map-get($_SCREEN-BREAKPOINTS, $breakpoint, 'max')) {
+      @content;
+    }
+  }
+}
+
+// Getter function for the $_SCREEN-BREAKPOINTS map
+@function getBreakpoint($breakpoint, $range) {
+  @if map-has-key($_SCREEN-BREAKPOINTS, $breakpoint) {
+    @if map-has-key($_SCREEN-BREAKPOINTS, $breakpoint, $range) {
+      @return map-get($_SCREEN-BREAKPOINTS, $breakpoint, $range);
+    } @else {
+      @error 'Unknown range value: `#{$range}`';
+    }
+  } @else {
+    @error 'Unknown breakpoint value: `#{$breakpoint}`';
+  }
+}
