@@ -1,31 +1,33 @@
+// @link https://utopia.fyi/space/calculator/?c=232,16,1.25,1240,20,1.25,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
 $_SPACING-VALUES: (
   default: (
-    space-3xl: clamp(6rem, 5.487rem + 2.5974vi, 7.5rem),
-    space-2xl: clamp(4rem, 3.658rem + 1.7316vi, 5rem),
-    space-xl: clamp(3rem, 2.7435rem + 1.2987vi, 3.75rem),
-    space-l: clamp(2rem, 1.829rem + 0.8658vi, 2.5rem),
-    space-m: clamp(1.5rem, 1.3718rem + 0.6494vi, 1.875rem),
-    space-s: clamp(1rem, 0.9145rem + 0.4329vi, 1.25rem),
-    space-xs: clamp(0.75rem, 0.6859rem + 0.3247vi, 0.9375rem),
-    space-2xs: clamp(0.5rem, 0.4573rem + 0.2165vi, 0.625rem),
-    space-3xs: clamp(0.25rem, 0.2286rem + 0.1082vi, 0.3125rem),
+    space-3xl: clamp(6rem, 5.6548rem + 2.381vi, 7.5rem),
+    space-2xl: clamp(4rem, 3.7698rem + 1.5873vi, 5rem),
+    space-xl: clamp(3rem, 2.8274rem + 1.1905vi, 3.75rem),
+    space-l: clamp(2rem, 1.8849rem + 0.7937vi, 2.5rem),
+    space-m: clamp(1.5rem, 1.4137rem + 0.5952vi, 1.875rem),
+    space-s: clamp(1rem, 0.9425rem + 0.3968vi, 1.25rem),
+    space-xs: clamp(0.75rem, 0.7068rem + 0.2976vi, 0.9375rem),
+    space-2xs: clamp(0.5rem, 0.4712rem + 0.1984vi, 0.625rem),
+    space-3xs: clamp(0.25rem, 0.2356rem + 0.0992vi, 0.3125rem),
   ),
   one-up: (
-    space-2xl-3xl: clamp(4rem, 2.803rem + 6.0606vi, 7.5rem),
-    space-xl-2xl: clamp(3rem, 2.316rem + 3.4632vi, 5rem),
-    space-l-xl: clamp(2rem, 1.4015rem + 3.0303vi, 3.75rem),
-    space-m-l: clamp(1.5rem, 1.158rem + 1.7316vi, 2.5rem),
-    space-s-m: clamp(1rem, 0.7008rem + 1.5152vi, 1.875rem),
-    space-xs-s: clamp(0.75rem, 0.579rem + 0.8658vi, 1.25rem),
-    space-2xs-xs: clamp(0.5rem, 0.3504rem + 0.7576vi, 0.9375rem),
-    space-3xs-2xs: clamp(0.25rem, 0.1218rem + 0.6494vi, 0.625rem),
+    space-2xl-3xl: clamp(4rem, 3.1944rem + 5.5556vi, 7.5rem),
+    space-xl-2xl: clamp(3rem, 2.5397rem + 3.1746vi, 5rem),
+    space-l-xl: clamp(2rem, 1.5972rem + 2.7778vi, 3.75rem),
+    space-m-l: clamp(1.5rem, 1.2698rem + 1.5873vi, 2.5rem),
+    space-s-m: clamp(1rem, 0.7986rem + 1.3889vi, 1.875rem),
+    space-xs-s: clamp(0.75rem, 0.6349rem + 0.7937vi, 1.25rem),
+    space-2xs-xs: clamp(0.5rem, 0.3993rem + 0.6944vi, 0.9375rem),
+    space-3xs-2xs: clamp(0.25rem, 0.1637rem + 0.5952vi, 0.625rem),
   ),
   custom: (
-    space-s-l: clamp(1rem, 0.487rem + 2.5974vi, 2.5rem),
+    space-s-l: clamp(1rem, 0.6548rem + 2.381vi, 2.5rem),
   ),
 );
 
-@function spacing($key) {
+// Getter function for the $_SPACING-VALUES map
+@function getSpacing($key) {
   @if map-has-key($_SPACING-VALUES, default, $key) {
     @return map-get($_SPACING-VALUES, default, $key);
   }
