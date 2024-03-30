@@ -1,14 +1,28 @@
-import styles from './column-grid.module.scss';
+import './column-grid.scss';
+import clsx from 'clsx';
 
-/* eslint-disable-next-line */
-export interface ColumnGridProps {}
+export type ColumnGridProps = {
+  columnNumber: 12 | 6 | 4;
+  screenBreakpoint: 'Widescreen' | 'Desktop' | 'Tablet' | 'Mobile' | 'None';
+};
 
-export function ColumnGrid(props: ColumnGridProps) {
+export function ColumnGrid({
+  columnNumber = 12,
+  screenBreakpoint,
+}: ColumnGridProps) {
+  const classes = clsx({
+    'column-grid': true,
+    'widescreen-breakpoint': screenBreakpoint == 'Widescreen',
+    'desktop-breakpoint': screenBreakpoint == 'Desktop',
+    'tablet-breakpoint': screenBreakpoint == 'Tablet',
+    'mobile-breakpoint': screenBreakpoint == 'Mobile',
+  });
+
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to ColumnGrid!</h1>
+    <div className={classes}>
+      {Array.from(Array(columnNumber)).map((e, i) => (
+        <div key={`column-${i}`} className={`column-${i}`} />
+      ))}
     </div>
   );
 }
-
-export default ColumnGrid;

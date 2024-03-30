@@ -1,0 +1,62 @@
+@use '../../../../../../styles/modules/spacing.module' as *;
+@use '../../../../../../styles/modules/breakpoints.module' as *;
+
+$_GRID-MARGIN-LEFT: 0px;
+$_GRID-MARGIN-RIGHT: 0px;
+$_GRID-HEIGHT: 720px;
+$_GRID-MAX-WIDTH: 77.5rem; // 1240px
+$_GRID-MIN-WIDTH: 19.75rem; // 316px
+$_GRID-GUTTER: getSpacing(space-s-l);
+$_COLUMN-WIDTH: 60px;
+$_COLUMN-COLOR: rgba(210, 36, 216, 0.418);
+$_BACKGROUND-COLOR: rgba(255, 192, 203, 0.233);
+
+.column-grid {
+  & {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    max-width: $_GRID-MAX-WIDTH;
+    min-width: $_GRID-MIN-WIDTH;
+    height: $_GRID-HEIGHT;
+    gap: $_GRID-GUTTER;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    justify-content: space-evenly;
+    background-color: $_BACKGROUND-COLOR;
+  }
+
+  &.widescreen-breakpoint {
+    max-width: getBreakpoint(widescreen, max);
+    min-width: getBreakpoint(widescreen, min);
+  }
+  &.desktop-breakpoint {
+    max-width: getBreakpoint(desktop, max);
+    min-width: getBreakpoint(desktop, min);
+  }
+  &.tablet-breakpoint {
+    max-width: getBreakpoint(tablet, max);
+    min-width: getBreakpoint(tablet, min);
+  }
+  &.mobile-breakpoint {
+    max-width: getBreakpoint(mobile, max);
+    min-width: getBreakpoint(mobile, min);
+  }
+
+  div {
+    & {
+      width: $_COLUMN-WIDTH;
+      height: 100%;
+      background-color: $_COLUMN-COLOR;
+    }
+
+    &:first-child {
+      margin-left: $_GRID-MARGIN-LEFT;
+    }
+
+    &:last-child {
+      margin-right: $_GRID-MARGIN-RIGHT;
+    }
+  }
+}

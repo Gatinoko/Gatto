@@ -1,23 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ColumnGrid } from './column-grid';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+type Story = StoryObj<typeof ColumnGrid>;
 
 const meta: Meta<typeof ColumnGrid> = {
   component: ColumnGrid,
   title: 'Column Grid',
+  argTypes: {
+    columnNumber: {
+      options: [12, 6, 4],
+      control: { type: 'select' },
+    },
+  },
 };
 export default meta;
-type Story = StoryObj<typeof ColumnGrid>;
 
-export const Primary = {
-  args: {},
-};
-
-export const Heading: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
+export const Demo: Story = {
+  args: {
+    columnNumber: 12,
   },
 };
