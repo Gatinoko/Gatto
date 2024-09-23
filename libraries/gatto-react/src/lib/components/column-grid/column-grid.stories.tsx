@@ -7,16 +7,16 @@ const meta: Meta<typeof ColumnGrid> = {
   component: ColumnGrid,
   title: 'Column Grid',
   argTypes: {
-    columnNumber: {
-      options: [12, 6, 4],
-      control: { type: 'select' },
-    },
+    // columnNumber: {
+    //   options: [18, 12, 6, 4],
+    //   control: { type: 'select' },
+    // },
   },
 };
 export default meta;
 
 export const Demo: Story = {
   args: {
-    columnNumber: 12,
+    // columnNumber: 12,
   },
 };

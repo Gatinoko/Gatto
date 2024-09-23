@@ -2,12 +2,12 @@ import './column-grid.scss';
 import clsx from 'clsx';
 
 export type ColumnGridProps = {
-  columnNumber: 12 | 6 | 4;
+  // columnNumber: 18 | 12 | 6 | 4;
   screenBreakpoint: 'Widescreen' | 'Desktop' | 'Tablet' | 'Mobile' | 'None';
 };
 
 export function ColumnGrid({
-  columnNumber = 12,
+  // columnNumber = 12,
   screenBreakpoint,
 }: ColumnGridProps) {
   const classes = clsx({
@@ -18,9 +18,11 @@ export function ColumnGrid({
     'mobile-breakpoint': screenBreakpoint == 'Mobile',
   });
 
+  const;
+
   return (
     <div className={classes}>
-      {Array.from(Array(columnNumber)).map((e, i) => (
+      {Array.from(Array(12)).map((e, i) => (
         <div key={`column-${i}`} className={`column-${i}`} />
       ))}
     </div>

@@ -1,0 +1,17 @@
+.button {
+  &.xl {
+    background-color: rgb(255, 0, 0);
+  }
+  &.l {
+    background-color: rgb(255, 0, 157);
+  }
+  &.m {
+    background-color: rgb(119, 0, 255);
+  }
+  &.s {
+    background-color: rgb(0, 119, 255);
+  }
+  &.xs {
+    background-color: rgb(0, 255, 170);
+  }
+}

@@ -7,7 +7,7 @@ $_GRID-HEIGHT: 720px;
 $_GRID-MAX-WIDTH: 77.5rem; // 1240px
 $_GRID-MIN-WIDTH: 19.75rem; // 316px
 $_GRID-GUTTER: getSpacing(space-s-l);
-$_COLUMN-WIDTH: 60px;
+$_COLUMN-WIDTH: 100%;
 $_COLUMN-COLOR: rgba(210, 36, 216, 0.418);
 $_BACKGROUND-COLOR: rgba(255, 192, 203, 0.233);
 
@@ -28,6 +28,7 @@ $_BACKGROUND-COLOR: rgba(255, 192, 203, 0.233);
   }
 
   &.widescreen-breakpoint {
+    background-color: aqua;
     max-width: getBreakpoint(widescreen, max);
     min-width: getBreakpoint(widescreen, min);
   }

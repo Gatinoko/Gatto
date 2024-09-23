@@ -1,23 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
   component: Button,
   title: 'Button',
+  argTypes: {
+    text: {
+      control: { type: 'text' },
+    },
+  },
 };
 export default meta;
-type Story = StoryObj<typeof Button>;
 
-export const Primary = {
-  args: {},
-};
-
-export const Heading: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
+export const Demo: Story = {
+  args: {
+    text: 'Button',
   },
 };
